@@ -1,0 +1,50 @@
+body {
+  background-image: linear-gradient(#403075, #882D61);
+}
+.score{
+position: absolute;
+left:110px;
+font-size:36px;
+}
+.papan{
+position: absolute;
+font-size:36px;
+}
+.container{
+width: 600px;
+height: 660px;
+margin: Auto;
+}
+
+.line{
+  width: 148px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  float: left;
+  border: 1px solid white;
+}
+.notes{
+width:148px;
+height: 60px;
+position: absolute;
+animation: block 2s 1 linear;
+}
+@keyframes block{
+0%{top:0px}
+100%{top:560px}
+}
+.key{
+width:147px;
+height:60px;
+background-color:aquamarine;
+}
+.key.active{
+background-color:aqua;
+}
+.sparator{
+width:600px;
+height:5px;
+background-color:white;
+float:left;
+}
