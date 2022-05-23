@@ -1,12 +1,45 @@
 <!doctype html>
 <html>
   <head>
-    <title>Piano</title>
+    <title>Virus Slayer</title>
     <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="images/protect.png">
   </head>
-  <body onload="addNotes()">
-  <div class="papan">Score :</div>
+  <body onload="openForm()">
+    <div class="form-popup" id="start">
+      <div class="form-container">
+        <h1>Instruction Virus Slayer</h1>
+        <p>1. Input Username and click Play<br>
+           2. Destroy Virus with D F J K Key<br>
+           3. Reach High Score<br>
+           4. Enjoy</p>
+        <input type="text" placeholder="Input username" name="username" id="username">
+        <button class="btn" onclick="addNotes()">Play</button>
+      </div>
+    </div>
+    <div class="form-pause" id="pause">
+      <div class="form-pause-container">
+        <h1>PAUSED</h1>
+        <button class="cancel" onclick="tutup()">Continue</button> 
+        <button class="btn" onclick="window.location.reload()">Restart</button>
+      </div>
+    </div>
+    <div class="form-quit" id="quit">
+      <div class="form-quit-container">
+        <h1>GAME OVER</h1>
+        <div>Score</div>
+        <div id="nilai"></div>
+        <div >Player</div>
+        <div id="pemain"></div>
+        <button class="btn" onclick="window.location.reload()">Restart</button>
+      </div>
+    </div>
+    <div class="papan">Score :</div>
   <div class="score">0</div>
+  <div class="nama">Player :</div>
+  <div id="player"></div>
+  <button class="restar" onclick="window.location.reload()">Restart</button>
+  <button class="quit" onclick="quit()">QUIT</button>
     <div class="container">
       <div class="line l1">
 		
@@ -26,7 +59,7 @@
       <button class="key kj"><img src='images/suntikan.png' width='42' height='42'></button>
       <button class="key kk"><img src='images/suntikan.png' width='42' height='42'></button>
     </div>
-
+    
     <script src="script.js"></script>
   </body>
 </html>

@@ -2,8 +2,34 @@ const papanSkor = document.querySelector('.score');
 let skor;
 skor = 0;
 papanSkor.textContent = 0;
+function openForm() {
+  document.getElementById("start").style.display = "block";
+  tutup();
+}
 
+function closeForm() {
+  document.getElementById("start").style.display = "none";
+}
+
+function open() {
+  document.getElementById("pause").style.display = "block";
+}
+
+function tutup() {
+  document.getElementById("pause").style.display = "none";
+}
+function quit() {
+  document.getElementById("quit").style.display = "block";
+  var username=document.getElementById("player").innerText;
+    document.getElementById("pemain").innerHTML=username;
+    var score=document.querySelector('.score').innerHTML;
+    document.getElementById("nilai").innerHTML=score;
+}
 function addNotes(){
+  
+  closeForm();
+  var username=document.getElementById("username").value;
+    document.getElementById("player").innerHTML=username;
 //random line letak kemunculan notes
 var line = Math.floor(Math.random() * 4 + 1);
 if(line === 1){
@@ -107,5 +133,8 @@ window.addEventListener("keydown", ({ keyCode }) => {
 
   // Press K
   if (keyCode === 75) return playK();
+
+  // Press K
+  if (keyCode === 27) return open();
 
 }); 
